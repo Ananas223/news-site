@@ -5,30 +5,16 @@
       <v-toolbar-title>Новости</v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer v-model="navigation"></v-navigation-drawer>
-    <v-main>
-      <v-container>
-        <v-row no-gutters> 
-          <NewsModule v-for="(item, i) in news" v-bind:key="i"
-          v-bind:image = "item.urlToImage"
-          v-bind:link = "item.url"
-          v-bind:title = "item.title"
-          v-bind:descr = "item.description"
-          >
-          </NewsModule>
-        </v-row>
-      </v-container>
-    </v-main>
+    <router-view/>
   </v-app>
 </template>
 
 <script>
-import NewsModule from './components/NewsModule.vue'
 
 export default {
   name: 'App',
 
   components: {
-    NewsModule
   },
 
   data: () => ({
